@@ -35,9 +35,8 @@ variable "private_subnet_3_cidr" {
 }
 
 variable "instance_type" {
-}
-
-variable "instance_ami" {
+  description = "EC2 instance type"
+  default = "t2.medium"
 }
 
 variable "ssh_key" {
@@ -45,5 +44,5 @@ variable "ssh_key" {
 }
 
 variable "install_jenkins" {
-  default     = "~/gitub/jenkins-terraform/scripts/install_jenkins.sh"
+  default     = "~/github/AWS-jenkins-terraform/scripts/install_jenkins.sh"
 }
