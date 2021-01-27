@@ -39,8 +39,14 @@ sudo systemctl enable firewalld
 
 echo "Step:5 Open the ports 80 and 8080 in OS firewall"
 firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-port=80/tcp --permanent
 firewall-cmd --zone=public --add-service=http --permanent
 firewall-cmd --reload
 
 echo "View the credentials"
 # cat /var/lib/jenkins/secrets/initialAdminPassword
+
+echo "Install apache"
+yum -y install httpd
+systemctl enable httpd
+systemctl start httpd.service
