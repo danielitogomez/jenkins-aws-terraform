@@ -18,7 +18,7 @@ data "aws_ami" "amazon-linux-2" {
 }
 
 data "template_file" "init" {
-  template = file(var.init_script)
+  template = file(var.install_jenkins)
 }
 
 resource "aws_key_pair" "tf-jenkins-aws" {
@@ -30,17 +30,17 @@ resource "aws_instance" "jenkins-ci-vm" {
   ami             = data.aws_ami.amazon-linux-2.id
   instance_type   = "${var.instance_type}"
   key_name        = aws_key_pair.tf-jenkins-aws.key_name
-  vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
+  vpc_security_group_ids = [aws_security_group.sg_allow_jenkins.id]
   subnet_id          = aws_subnet.public-subnet-1.id
-  user_data = file(var.init_script)
+  user_data = file(var.install_jenkins)
   associate_public_ip_address = true
   tags = {
     Name = "jenkins-ci-vm"
   }
 }
 
-resource "aws_security_group" "sg_allow_ssh_jenkins" {
-  name        = "allow_ssh_jenkins"
+resource "aws_security_group" "sg_allow_jenkins" {
+  name        = "allow_jenkins"
   description = "Allow SSH and Jenkins inbound traffic"
   vpc_id      = aws_vpc.development-vpc.id
 

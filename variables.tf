@@ -43,6 +43,6 @@ variable "ssh_key" {
   default     = "~/.ssh/id_rsa_jenkins.pub"
 }
 
-variable "init_script" {
-  default     = "~/github/jenkins-aws-terraform/scripts/init_script.sh"
+variable "install_jenkins" {
+  default     = "~/github/jenkins-aws-terraform/scripts/install_jenkins.sh"
 }
