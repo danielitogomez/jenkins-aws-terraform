@@ -43,10 +43,6 @@ firewall-cmd --zone=public --add-port=80/tcp --permanent
 firewall-cmd --zone=public --add-service=http --permanent
 firewall-cmd --reload
 
-echo "View the credentials"
+echo "View the Jenkins credentials"
 # cat /var/lib/jenkins/secrets/initialAdminPassword
 
-echo "Install apache"
-yum -y install httpd
-systemctl enable httpd
-systemctl start httpd.service
