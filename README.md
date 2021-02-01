@@ -40,7 +40,7 @@ sudo yum install -y epel-release && sudo yum install -y ansible
 
 * Over Mac:
 ```
-brew ins install terraform
+brew install ansible
 ```
 
 * Over Ubuntu:
@@ -48,8 +48,9 @@ brew ins install terraform
 sudo apt-get update && sudo apt-get install ansible -y
 ```
 
-### One a terraform apply was run, send this command for install apache to remote server using Ansible.
-* Depending of your user use ec2-user for AWS AMIs, but maybe in your AMI is diferent, and change the host in the setup.yaml and hosts
+### Once terraform apply was run, send next command for install apache to remote server using Ansible.
+* Depending of your AWS AMI will be the user.
+* Change the host in the setup.yaml and file hosts
 ```
 ansible-playbook setup.yml --user=ec2-user -i hosts
 ```
