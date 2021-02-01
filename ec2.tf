@@ -28,7 +28,7 @@ resource "aws_key_pair" "tf-jenkins-aws" {
 
 resource "aws_instance" "jenkins-ci-vm" {
   ami             = data.aws_ami.amazon-linux-2.id
-  instance_type   = "${var.instance_type}"
+  instance_type   = (var.instance_type)
   key_name        = aws_key_pair.tf-jenkins-aws.key_name
   vpc_security_group_ids = [aws_security_group.sg_allow_jenkins.id]
   subnet_id          = aws_subnet.public-subnet-1.id
