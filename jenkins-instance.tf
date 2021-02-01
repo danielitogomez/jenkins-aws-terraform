@@ -66,13 +66,6 @@ resource "aws_security_group" "sg_allow_jenkins" {
   }
 
   ingress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
     protocol    = "icmp"
     from_port   = -1
     to_port     = -1
