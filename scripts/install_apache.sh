@@ -7,7 +7,7 @@ echo "Configuring VirtualHost"
 
 sudo touch /etc/httpd/conf.d/00jenkins.conf && sudo chmod 766 /etc/httpd/conf.d/00jenkins.conf
 echo "<Virtualhost *:80>
-            ServerName        ec2-3-237-84-36.compute-1.amazonaws.com
+            ServerName        ec2-3-91-90-222.compute-1.amazonaws.com
             ProxyRequests     On
             ProxyPreserveHost On
             AllowEncodedSlashes NoDecode
