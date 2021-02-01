@@ -51,6 +51,7 @@ sudo apt-get update && sudo apt-get install ansible -y
 ### Once terraform apply was run, send next command for install apache to remote server using Ansible.
 * Depending of your AWS AMI will be the user.
 * Change the host in the setup.yaml and file hosts
+* Change in install_apache.sh bash script the new ServerName
 ```
 ansible-playbook setup.yml --user=ec2-user -i hosts
 ```
