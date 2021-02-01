@@ -3,7 +3,7 @@ This repository is for a POC of Jenkins into EC2 instance on AWS, using terrafor
 
 # About Terraform
 Install Terraform, need version 0.12 or superior.
-* Over Centos7:
+* Over CentOS7:
 ```
 sudo yum update && sudo yum install wget unzip -y
 export VERSION=0.12.25
@@ -24,7 +24,7 @@ sudo wget https://releases.hashicorp.com/terraform/${VERSION}/terraform_${VERSIO
 sudo unzip /tmp/terraform_${VERSION}_linux_amd64.zip -d /usr/local/bin/
 ```
 
-* Setup with local terraform:
+* Setup with terraform cli:
 ```
 terraform init && terraform plan
 terraform apply -auto-approve
@@ -33,7 +33,7 @@ terraform apply -auto-approve
 # Ansible
 Install Ansible
 
-* Over Centos7:
+* Over CentOS7:
 ```
 sudo yum install -y epel-release && sudo yum install -y ansible
 ```
