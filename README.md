@@ -1,7 +1,7 @@
 # Jenkins-AWS-terraform
 This repository is for a POC of Jenkins into EC2 instance on AWS, using terraform, template file init and Ansible.
 
-# About Terraform
+# Terraform
 Install Terraform, need version 0.12 or superior.
 * Over CentOS7:
 ```
